@@ -10,6 +10,8 @@ fellow coworkers.
 
 Here is some information about [how to create a kata](https://github.com/Codewars/codewars.com/wiki/Tutorial%3A-Create-Your-First-Kata) from Codewars.
 
+You need 75+ honor points to create a kata.
+
 We can also create and share katas. We can keep track of FMP codewars katas by
 placing them under this directory. For example
 
