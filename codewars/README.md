@@ -9,4 +9,19 @@ Once you create an account, please join the `Findmypast` clan to join your
 fellow coworkers.
 
 We can also create and share katas. We can keep track of FMP codewars katas by
-placing them under this directory, e.g. `frontend-guild/codewars/rkotze/react-hoc`.
+placing them under this directory. For example
+
+```
+codewars/
+├── README.md
+├── dideler
+│   └── some-kata
+│       ├── index.js
+│       ├── index.spec.js
+│       └── README.md
+└── rkotze
+    └── another-kata
+        ├── index.js
+        ├── index.spec.js
+        └── README.md
+```
