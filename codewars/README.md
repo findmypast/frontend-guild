@@ -1,0 +1,12 @@
+# Codewars
+
+[Codewars](https://www.codewars.com/) is a place where you can train on code
+katas. You solve small problems that range in difficulty from very easy to very
+difficult. The idea is to repeatedly practice on toy problems and analyse
+solutions to hone your coding skills.
+
+Once you create an account, please join the `Findmypast` clan to join your
+fellow coworkers.
+
+We can also create and share katas. We can keep track of FMP codewars katas by
+placing them under this directory, e.g. `frontend-guild/codewars/rkotze/react-hoc`.
