@@ -9,6 +9,7 @@ Once you create an account, please join the `Findmypast` clan to join your
 fellow coworkers.
 
 Here is some information about [how to create a kata](https://github.com/Codewars/codewars.com/wiki/Tutorial%3A-Create-Your-First-Kata) from Codewars.
+Select a JS version for the kata that includes Babel, so that JSX can be transpiled, e.g. `Node v6.11.0/Babel`.
 
 You need 75+ honor points to create a kata.
 
