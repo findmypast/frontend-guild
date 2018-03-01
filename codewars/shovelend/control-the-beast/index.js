@@ -1,25 +1,25 @@
-import React, { Component } from "react";
+const React = require("react");
 
-class Beast extends Component {
+class Beast extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: props.name
+    };
+  }
 
-  state = {
-    beastName: this.props.beastName
-  }
-  
-  handleSubmit(event){
-    await fetch('https://beast.controlled.com/' + this.state.beastName);
-  }
-  
-  render(){
-    return(
-      <label>
-        Beast Name:
-        <input type="text" 
-        value = {this.state.beastName} 
-        onChange = {e => this.setState({ bestName: event.target.value })} />
-      </label>
-      <input type="submit" value="Control" />
+  render() {
+    return (
+          <input
+            id="controlledName"
+            type="text"
+            value={this.state.name}
+            onChange={e => this.setState({ name: e.target.value })}
+          />
     );
   }
-
 }
+
+Beast.defaultProps = {
+  name: "Yeti"
+};
