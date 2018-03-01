@@ -41,6 +41,13 @@ describe(`Controlled Beast with the name ${passedBeastName} passed`, () => {
       .simulate("change", { target: { value: typedBeastName } });
     Test.assertEquals(wrapper.state("name"), typedBeastName);
   });
+
+  it(`should set the state to empty when clearing out text`, () => {
+      wrapper
+        .find("#controlledName")
+        .simulate("change", { target: { value: "" } });
+      Test.assertEquals(wrapper.state("name"), "");
+    });
 });
 
 describe("Controlled Beast without props passed", () => {
