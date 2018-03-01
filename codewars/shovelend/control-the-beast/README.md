@@ -5,3 +5,5 @@ Your goal is to tame and control a beast by building a controlled React componen
 - Render a textinput field with the id `controlledName`. Its value should be the name of the current beast.
 - Whenever this field's value is modified, the state should be updated as well
 - You should control the beast `Yeti` by default
+
+Read about controlled components here: https://reactjs.org/docs/forms.html#controlled-components
