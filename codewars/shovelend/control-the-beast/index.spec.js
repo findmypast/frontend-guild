@@ -16,7 +16,6 @@ shuffle(beasts);
 
 let passedBeastName = beasts[0];
 let typedBeastName = beasts[1];
-let uncontrolledBeastName = beasts[2];
 
 describe(`Controlled Beast with the name ${passedBeastName} passed`, () => {
   const wrapper = shallow(<Beast name={passedBeastName} />);
@@ -50,9 +49,10 @@ describe(`Controlled Beast with the name ${passedBeastName} passed`, () => {
     });
 });
 
-describe("Controlled Beast without props passed", () => {
+describe(`Controlled Beast without props passed`, () => {
   const wrapper = shallow(<Beast />);
-  it("should set the default name to Yeti", () => {
+
+  it(`should set the default name to Yeti`, () => {
     Test.assertEquals(wrapper.state("name"), "Yeti");
   });
 });
