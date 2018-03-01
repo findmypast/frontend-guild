@@ -9,7 +9,7 @@ List of kata ideas to build:
 1. Basic component with nested children, e.g. unorder list Stef & Mobz [7kyu]
 1. Using default props, displayName, prop-types Laura & Tobes [7kyu]
 1. How to update local state in component [7kyu - 6kyu] Rob & Jon
-1. Controlled and uncontrolled input component [6kyu] Attila & Juan
+1. Controlled component [6kyu] Attila & Juan - DONE
 1. Click handlers, increment and decrement a value [6kyu] Dennis & Toby
 1. Form submit event handler [6kyu]
 1. Build HOC component (<- Mobz done)
