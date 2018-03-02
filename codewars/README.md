@@ -30,3 +30,7 @@ codewars/
         ├── index.spec.js
         └── README.md
 ```
+
+## Published katas
+
+1.  [Truncate paragraph using higher-order component in React JS](https://www.codewars.com/kata/truncate-paragraph-using-higher-order-component-in-react-js)
