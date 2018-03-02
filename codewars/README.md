@@ -34,3 +34,4 @@ codewars/
 ## Published katas
 
 1.  [Truncate paragraph using higher-order component in React JS](https://www.codewars.com/kata/truncate-paragraph-using-higher-order-component-in-react-js)
+2.  [Controlled components in React JS (Control the Beast)](https://www.codewars.com/kata/control-the-beast)
