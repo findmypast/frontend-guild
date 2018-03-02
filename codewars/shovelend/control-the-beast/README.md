@@ -1,3 +1,5 @@
+#### Codewars kata: https://www.codewars.com/kata/control-the-beast
+
 In this kata you'll learn how to control Components with different kinds of beasts.
 Your goal is to tame and control a beast by building a controlled React component with the following criteria:
 - Create a component called `Beast` and its state `name`
