@@ -33,5 +33,7 @@ codewars/
 
 ## Published katas
 
-1.  [Truncate paragraph using higher-order component in React JS](https://www.codewars.com/kata/truncate-paragraph-using-higher-order-component-in-react-js)
-2.  [Controlled components in React JS (Control the Beast)](https://www.codewars.com/kata/control-the-beast)
+1. [Easter egg list in ReactJS](https://www.codewars.com/kata/easter-egg-list-in-reactjs)
+1. [Managing Events in React JS](https://www.codewars.com/kata/managing-events-in-react-js)
+1. [Controlled components in React JS (Control the Beast)](https://www.codewars.com/kata/control-the-beast)
+1. [Truncate paragraph using higher-order component in React JS](https://www.codewars.com/kata/truncate-paragraph-using-higher-order-component-in-react-js)
