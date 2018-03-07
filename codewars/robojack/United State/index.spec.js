@@ -7,7 +7,7 @@ describe('Default State', () => {
     Test.assertNotEquals(wrapper.state('united'), null);
   });
 
-  it("It has a state 'united' witha value of false", () => {
+  it("It has a state 'united' with a value of false", () => {
     Test.assertEquals(wrapper.state('united'), false);
   });
 });

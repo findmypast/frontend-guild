@@ -7,7 +7,9 @@ class States extends React.Component {
       united: false,
     };
   }
+
   unite = () => this.setState({ united: true });
+
   render() {
     return (
       <div className="status">
