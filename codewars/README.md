@@ -34,6 +34,7 @@ codewars/
 ## Published katas
 
 1. [Easter egg list in ReactJS](https://www.codewars.com/kata/easter-egg-list-in-reactjs)
+1. [United State of React](https://www.codewars.com/kata/united-state-of-react)
 1. [Managing Events in React JS](https://www.codewars.com/kata/managing-events-in-react-js)
 1. [Controlled components in React JS (Control the Beast)](https://www.codewars.com/kata/control-the-beast)
 1. [PC upgrade specs using HOC in ReactJS](https://www.codewars.com/kata/pc-upgrade-specs-using-hoc-in-reactjs)
