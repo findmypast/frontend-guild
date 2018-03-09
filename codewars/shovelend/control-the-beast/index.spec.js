@@ -57,6 +57,14 @@ describe(`Controlled Beast without props passed`, () => {
   });
 });
 
+describe(`Controlled Beast with empty beast name passed`, () => {
+  const wrapper = shallow(<Beast name=""/>);
+
+  it(`should set the default name to empty`, () => {
+    Test.assertEquals(wrapper.state("name"), "");
+  });
+});
+
 function shuffle(array) {
   var i = 0,
     j = 0,
