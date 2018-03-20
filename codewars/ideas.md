@@ -13,7 +13,7 @@ List of kata ideas to build:
 1. Uncontrolled component [6kyu] Attila & Laura
 1. ~Click handlers, increment and decrement a value [6kyu]~ Dennis & Toby DONE
 1. ~Form submit event handler [6kyu]~ Stef BETA
-1. Raising the state from a component [6kyu - 5kyu]
+1. Raising the state from a component [6kyu - 5kyu - Mobz & Rob
 1. Using `componentWillMount` `componentDidMount` and `componentWillUnmount` [6kyu - 5kyu] - Stef
 1. Using `componentWillReceiveProps` `shouldComponentUpdate` `componentDidUpdate` and `componentWillUpdate` [6kyu - 5kyu] Jonathan & ?
 1. Using React `context` [5kyu]
