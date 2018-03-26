@@ -20,3 +20,4 @@ List of kata ideas to build:
 1. ~Build simple HOC component [6kyu - 5kyu]~ Mobz BETA
 1. ~Build paragraph limiter HOC component with conventions [5kyu - 4kyu]~ Mobz BETA 
 1. HOC with composition [4kyn] - Regis
+1. Refactor a class component to a functional component [6-7kyu] - Dennis
