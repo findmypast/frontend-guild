@@ -13,8 +13,8 @@ You'll need 75+ honor points to create a kata. If you don't have sufficient poin
 
 Codewars has docs on [how to create a kata](https://github.com/Codewars/codewars.com/wiki/Tutorial%3A-Create-Your-First-Kata).
 
-Select a JS version for the kata that includes Babel, so that JSX (which is used by React) can be transpiled.
-For example, the `Node v6.11.0/Babel` option.
+Select a JS version for the kata that includes Babel, so that JSX (which is used by React) can be transpiled.  
+At the time of writing, the only Node option with Babel is `Node v6.11.0/Babel`.
 
 ## Writing tests
 
