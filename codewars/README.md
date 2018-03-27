@@ -30,9 +30,7 @@ Codewars has its own testing framework. See their wiki for the docs:
 
 https://github.com/Codewars/codewars.com/wiki/Codewars-JavaScript-Test-Framework
 
-Note their docs may be outdated. You can check the source of their test framework to see the actual API:
-
-https://github.com/Codewars/codewars-runner-cli/blob/master/frameworks/javascript/cw-2.js
+Note their docs may be outdated. You can [check the source of their test framework to see the actual API](https://github.com/Codewars/codewars-runner-cli/blob/master/frameworks/javascript/cw-2.js).
 
 ## Publishing a kata
 
