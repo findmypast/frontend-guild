@@ -1,19 +1,54 @@
-const ShallowRenderer = require('react-test-renderer/shallow');
+const {shallow} = require('enzyme'); 
+  let wrapper
 
-function executeRender(jsx) {
-  const renderer = new ShallowRenderer();
-  renderer.render(jsx);
-  return renderer.getRenderOutput();
-}
+before(() => {
+    wrapper = shallow(<PizzaTopper />);
+  });
 
 describe('PizzaTopper', () => {
-  it('returns "Pizza Margherita" by default', () => {
-    const result = executeRender(<PizzaTopper />);
+  
+  it("Has defaultProps topping of 'Cheese'", () => {
+    const result = wrapper.instance().props.toppings
     Test.assertEquals(
       result,
-      'Pizza Margherita',
+      'Cheese',
+      'Needs to have defaultProps'
+    );
+  });
+  
+  it("Returns a div with an id of 'order'", () => {
+    const result = wrapper.find('#order').node.props.id
+    Test.assertEquals(
+     result, 
+    'order', 
+    'Should have a container with the id of order'
+    );
+  });
+  
+  it('Displays "Pizza topped with: Cheese" by default', () => {
+    const result = wrapper.find('#order').node.props.children.join('')
+    Test.assertEquals(
+      result,
+      'Pizza topped with: Cheese',
       'This is the default pizza.'
     );
   });
+  
+  it('Has a displayName of PizzaTopper', () => {
+    const result = PizzaTopper.displayName
+    Test.assertEquals(
+      result,
+      'PizzaTopper',
+      'Should use displayName to set the displayName for PizzaTopper'
+    );
+  });
+  
+  it('Can add a topping to a pizza order by passing a toppings prop', () => {
+    const result = shallow(<PizzaTopper toppings='Pepperoni, Basil'/>).find('#order').node.props.children.join('')
+    Test.assertEquals(
+      result,
+      'Pizza topped with: Pepperoni, Basil',
+      'Props can be passed to replace default toppings prop'
+    );
+  });
 });
-
