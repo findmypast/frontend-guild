@@ -1,8 +1,17 @@
 const React = require('react');
 
-const PizzaTopper = () => {
+const PizzaTopper = (props) => {
+  
+
   return (
-    "Pizza Margherita"
+  <div id="order">
+    Pizza topped with: {props.toppings}  
+  </div>
   )
 }
 
+PizzaTopper.defaultProps = {
+  toppings: 'Cheese',
+};
+
+PizzaTopper.displayName = 'PizzaTopper'
