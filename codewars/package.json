@@ -1,0 +1,35 @@
+{
+  "name": "codewars",
+  "version": "0.0.1",
+  "description": "codewars katas",
+  "main": "index.js",
+  "scripts": {
+    "test":
+      "mocha -r ./test-setup/jsdom.js --compilers js:babel-core/register robo-mobo/*spec.js robo-mobo/**/*spec.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^5.5.2",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "cheerio": "^1.0.0-rc.2",
+    "colors": "^1.1.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.17.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-react": "^7.6.1",
+    "jsdom": "^11.6.2",
+    "mocha": "^5.0.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "sinon": "^1.17.7"
+  }
+}
