@@ -1,22 +1,23 @@
+import React from "react";
 const { shallow, render } = require("enzyme");
+const { expect } = require("chai");
+
+// dont copy this import
+import { Universe, Planet, Starship } from "./";
 
 describe("Setup Universe, Starship and Planet", () => {
   it("Setup Universe, Starship and Planet should be React components", () => {
-    Test.assertEquals(
-      typeof Universe,
+    expect(Universe).to.be.an(
       "function",
       "Universe should be a React component"
     );
-    Test.assertEquals(
-      typeof Starship,
+
+    expect(Starship).to.be.an(
       "function",
       "Starship should be a React component"
     );
-    Test.assertEquals(
-      typeof Planet,
-      "function",
-      "Planet should be a React component"
-    );
+
+    expect(Planet).to.be.an("function", "Planet should be a React component");
   });
 
   it("Starship setup its own inhabitants", () => {
@@ -24,9 +25,8 @@ describe("Setup Universe, Starship and Planet", () => {
       <Starship inhabitants={["Lauras", "Tobin", "Robot"]} />
     );
     const buttons = result.find("button");
-    Test.assertEquals(buttons.length, 3, "Starship should have 3 inhabitants");
-    Test.assertEquals(
-      buttons.at(0).text(),
+    expect(buttons.length).to.equal(3, "Starship should have 3 inhabitants");
+    expect(buttons.at(0).text()).to.equal(
       "Transport Lauras",
       "Starships first inhabitant should be 'Laura'"
     );
@@ -37,9 +37,8 @@ describe("Setup Universe, Starship and Planet", () => {
       <Planet inhabitants={["Attilus", "Dennix", "Mobius"]} />
     );
     const buttons = result.find("button");
-    Test.assertEquals(buttons.length, 3, "Planet should have 3 inhabitants");
-    Test.assertEquals(
-      buttons.at(0).text(),
+    expect(buttons.length).to.equal(3, "Planet should have 3 inhabitants");
+    expect(buttons.at(0).text()).to.equal(
       "Transport Attilus",
       "Planets first inhabitant should be 'Attilus'"
     );

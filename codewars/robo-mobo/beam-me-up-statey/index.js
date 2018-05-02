@@ -1,6 +1,6 @@
 const React = require("react");
 
-class Universe extends React.Component {
+export class Universe extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -34,7 +34,7 @@ class Universe extends React.Component {
   }
 }
 
-class Starship extends React.Component {
+export class Starship extends React.Component {
   constructor(props) {
     super(props);
     this.state = { inhabitants: props.inhabitants };
@@ -73,7 +73,7 @@ class Starship extends React.Component {
   }
 }
 
-class Planet extends React.Component {
+export class Planet extends React.Component {
   constructor(props) {
     super(props);
     this.state = { inhabitants: ["Attilus", "Dennix", "Mobius"] };
