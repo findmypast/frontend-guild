@@ -43,4 +43,13 @@ describe("Setup Universe, Starship and Planet", () => {
       "Planets first inhabitant should be 'Attilus'"
     );
   });
+
+  it("Universe contains a starship and a planet", () => {
+    const result = shallow(<Universe />);
+
+    const Starship = result.find("Starship");
+    const Planet = result.find("Planet");
+    expect(Starship).to.exist;
+    expect(Planet).to.exist;
+  });
 });
