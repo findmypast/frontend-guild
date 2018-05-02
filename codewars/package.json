@@ -4,8 +4,7 @@
   "description": "codewars katas",
   "main": "index.js",
   "scripts": {
-    "test":
-      "mocha -r ./test-setup/jsdom.js --compilers js:babel-core/register robo-mobo/*spec.js robo-mobo/**/*spec.js"
+    "test": "mocha -r ./test-setup/jsdom.js --compilers js:babel-core/register robo-mobo/*spec.js robo-mobo/**/*spec.js"
   },
   "author": "",
   "license": "ISC",
