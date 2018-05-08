@@ -16,6 +16,20 @@ Codewars has docs on [how to create a kata](https://github.com/Codewars/codewars
 Select a JS version for the kata that includes Babel, so that JSX (which is used by React) can be transpiled.  
 At the time of writing, the only Node option with Babel is `Node v6.11.0/Babel`.
 
+## Running tests
+
+You can now run mocha unit test.
+
+1.  cd ./codewars
+1.  npm i
+1.  npm test
+
+To **add** your own tests create a file with the extension `.test.js` and this will be included in the test runner.
+
+This all passes through babel so you can use ES6 keywords like import. However, **keep in mind** somethings might not work in codewars which might work in this repo.
+
+**Note:** in Codewars make sure you require `chai` for assert library. e.g.`const { expect } = require('chai')`
+
 ## Writing tests
 
 We recommend TDD when creating the kata. Writing many small tests with descriptive feedback helps the user solve the problem.
@@ -56,16 +70,15 @@ codewars/
         └── README.md
 ```
 
-
 ## Published katas
 
-1. [Easter egg list in ReactJS](https://www.codewars.com/kata/easter-egg-list-in-reactjs)
-1. [United State of React](https://www.codewars.com/kata/united-state-of-react)
-1. [Managing Events in React JS](https://www.codewars.com/kata/managing-events-in-react-js)
-1. [Controlled components in React JS (Control the Beast)](https://www.codewars.com/kata/control-the-beast)
-1. [Santa wish list form in ReactJS](https://www.codewars.com/kata/santa-wish-list-form-in-reactjs)
-1. [PC upgrade specs using HOC in ReactJS](https://www.codewars.com/kata/pc-upgrade-specs-using-hoc-in-reactjs)
-1. [Truncate paragraph using higher-order component in React JS](https://www.codewars.com/kata/truncate-paragraph-using-higher-order-component-in-react-js)
+1.  [Easter egg list in ReactJS](https://www.codewars.com/kata/easter-egg-list-in-reactjs)
+1.  [United State of React](https://www.codewars.com/kata/united-state-of-react)
+1.  [Managing Events in React JS](https://www.codewars.com/kata/managing-events-in-react-js)
+1.  [Controlled components in React JS (Control the Beast)](https://www.codewars.com/kata/control-the-beast)
+1.  [Santa wish list form in ReactJS](https://www.codewars.com/kata/santa-wish-list-form-in-reactjs)
+1.  [PC upgrade specs using HOC in ReactJS](https://www.codewars.com/kata/pc-upgrade-specs-using-hoc-in-reactjs)
+1.  [Truncate paragraph using higher-order component in React JS](https://www.codewars.com/kata/truncate-paragraph-using-higher-order-component-in-react-js)
 
 Rob (@sultanhq) maintains a collection of React katas:
 
