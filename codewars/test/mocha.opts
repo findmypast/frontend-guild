@@ -1,0 +1,5 @@
+--require ./test/jsdom.js
+--colors
+--inline-diffs
+--compilers js:babel-core/register
+{,!(node_modules)/**/}*.test.js
