@@ -60,11 +60,9 @@ describe('Transport everyone', () => {
     const result = mount(<Universe />);
     const allPeopleOnPlanet = result.find('Planet button');
 
-    const peopleNodes = allPeopleOnPlanet.map((person) => person);
-
-    peopleNodes[0].simulate('click');
-    peopleNodes[0].simulate('click');
-    peopleNodes[0].simulate('click');
+    allPeopleOnPlanet.at(0).simulate('click');
+    allPeopleOnPlanet.at(0).simulate('click');
+    allPeopleOnPlanet.at(0).simulate('click');
 
     const allPeopleOnStarship = result.find('Starship button');
 
@@ -78,11 +76,9 @@ describe('Transport everyone', () => {
     const result = mount(<Universe />);
     const allPeopleOnStarship = result.find('Starship button');
 
-    const peopleNodes = allPeopleOnStarship.map((person) => person);
-
-    peopleNodes[0].simulate('click');
-    peopleNodes[0].simulate('click');
-    peopleNodes[0].simulate('click');
+    allPeopleOnStarship.at(0).simulate('click');
+    allPeopleOnStarship.at(0).simulate('click');
+    allPeopleOnStarship.at(0).simulate('click');
 
     const allPeopleOnPlanet = result.find('Planet button');
 
