@@ -80,4 +80,26 @@ describe('Transport person', () => {
 
     expect(forthPersonOnPlanet.text()).to.equal(person);
   });
+
+});
+
+describe('Transport everyone', () => {
+  it('from the planet to starship', () => {
+    const allPeople = ["Attilus", "Dennix", "Mobius"];
+    const result = mount(<Universe />);
+    const allPeopleOnPlanet = result.find('Planet button');
+
+    const peopleNodes = allPeopleOnPlanet.map((person) => person);
+
+    peopleNodes[0].simulate('click');
+    peopleNodes[0].simulate('click');
+    peopleNodes[0].simulate('click');
+
+    const allPeopleOnStarship = result.find('Starship button');
+
+    allPeople.forEach((personName, i) => {
+      expect(allPeopleOnStarship.at(i + 3).text()).to.equal('Transport ' + allPeople[i]);
+    });
+  });
+
 });
