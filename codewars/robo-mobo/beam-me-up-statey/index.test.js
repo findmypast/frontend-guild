@@ -54,35 +54,6 @@ describe("Setup Universe, Starship and Planet", () => {
   });
 });
 
-describe('Transport person', () => {
-  it('from the planet to starship', () => {
-    const person = 'Transport Attilus';
-    const result = mount(<Universe />);
-    const firstPersonOnPlanet = result.find('Planet button').at(0);
-
-    expect(firstPersonOnPlanet.text()).to.equal(person);
-
-    firstPersonOnPlanet.simulate('click');
-    const forthPersonOnStarship = result.find('Starship button').at(3);
-
-    expect(forthPersonOnStarship.text()).to.equal(person);
-  });
-
-  it('from the starship to planet', () => {
-    const person = 'Transport Lauras';
-    const result = mount(<Universe />);
-    const firstPersonOnStarship = result.find('Starship button').at(0);
-
-    expect(firstPersonOnStarship.text()).to.equal(person);
-
-    firstPersonOnStarship.simulate('click');
-    const forthPersonOnPlanet = result.find('Planet button').at(3);
-
-    expect(forthPersonOnPlanet.text()).to.equal(person);
-  });
-
-});
-
 describe('Transport everyone', () => {
   it('from the planet to starship', () => {
     const allPeople = ["Attilus", "Dennix", "Mobius"];
