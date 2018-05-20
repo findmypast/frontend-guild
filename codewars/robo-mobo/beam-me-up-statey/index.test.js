@@ -1,5 +1,5 @@
 import React from "react";
-const { shallow, render } = require("enzyme");
+const { shallow, mount, render } = require("enzyme");
 const { expect } = require("chai");
 
 // dont copy this import
@@ -22,7 +22,7 @@ describe("Setup Universe, Starship and Planet", () => {
 
   it("Starship setup its own inhabitants", () => {
     const result = shallow(
-      <Starship inhabitants={["Lauras", "Tobin", "Robot"]} />
+      <Starship />
     );
     const buttons = result.find("button");
     expect(buttons.length).to.equal(3, "Starship should have 3 inhabitants");
@@ -34,7 +34,7 @@ describe("Setup Universe, Starship and Planet", () => {
 
   it("Planet setup its own inhabitants", () => {
     const result = shallow(
-      <Planet inhabitants={["Attilus", "Dennix", "Mobius"]} />
+      <Planet />
     );
     const buttons = result.find("button");
     expect(buttons.length).to.equal(3, "Planet should have 3 inhabitants");
@@ -51,5 +51,21 @@ describe("Setup Universe, Starship and Planet", () => {
     const Planet = result.find("Planet");
     expect(Starship).to.exist;
     expect(Planet).to.exist;
+  });
+});
+
+describe('Transport person', () => {
+  it('from the planet to starship', () => {
+    const person = 'Transport Attilus';
+    const result = mount(<Universe />);
+    const firstPersonOnPlanet = result.find('Planet button').at(0);
+
+    expect(firstPersonOnPlanet.text()).to.equal(person);
+
+    firstPersonOnPlanet.simulate('click');
+    const forthPersonOnStarship = result.find('Starship button').at(3);
+
+    expect(forthPersonOnStarship.text()).to.equal(person);
+
   });
 });

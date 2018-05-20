@@ -7,6 +7,8 @@ export class Universe extends React.Component {
       intransitToPlanet: null,
       intransitToStarShip: null
     };
+
+    this.transportToStarship = this.transportToStarship.bind(this);
   }
 
   transportToPlanet(person) {
@@ -37,7 +39,7 @@ export class Universe extends React.Component {
 export class Starship extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { inhabitants: props.inhabitants };
+    this.state = { inhabitants: ["Lauras", "Tobin", "Robot"] };
   }
 
   componentWillReceiveProps(nextProps) {
