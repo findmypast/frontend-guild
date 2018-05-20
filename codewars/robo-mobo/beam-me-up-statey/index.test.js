@@ -102,4 +102,22 @@ describe('Transport everyone', () => {
     });
   });
 
+  it('from the starship to planet', () => {
+    const allPeople = ["Lauras", "Tobin", "Robot"];
+    const result = mount(<Universe />);
+    const allPeopleOnStarship = result.find('Starship button');
+
+    const peopleNodes = allPeopleOnStarship.map((person) => person);
+
+    peopleNodes[0].simulate('click');
+    peopleNodes[0].simulate('click');
+    peopleNodes[0].simulate('click');
+
+    const allPeopleOnPlanet = result.find('Planet button');
+
+    allPeople.forEach((personName, i) => {
+      expect(allPeopleOnPlanet.at(i + 3).text()).to.equal('Transport ' + allPeople[i]);
+    });
+  });
+
 });
