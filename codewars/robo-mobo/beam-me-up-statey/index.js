@@ -9,6 +9,7 @@ export class Universe extends React.Component {
     };
 
     this.transportToStarship = this.transportToStarship.bind(this);
+    this.transportToPlanet = this.transportToPlanet.bind(this);
   }
 
   transportToPlanet(person) {

@@ -66,6 +66,18 @@ describe('Transport person', () => {
     const forthPersonOnStarship = result.find('Starship button').at(3);
 
     expect(forthPersonOnStarship.text()).to.equal(person);
+  });
 
+  it('from the starship to planet', () => {
+    const person = 'Transport Lauras';
+    const result = mount(<Universe />);
+    const firstPersonOnStarship = result.find('Starship button').at(0);
+
+    expect(firstPersonOnStarship.text()).to.equal(person);
+
+    firstPersonOnStarship.simulate('click');
+    const forthPersonOnPlanet = result.find('Planet button').at(3);
+
+    expect(forthPersonOnPlanet.text()).to.equal(person);
   });
 });
