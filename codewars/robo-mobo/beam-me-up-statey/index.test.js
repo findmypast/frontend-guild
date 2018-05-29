@@ -88,3 +88,25 @@ describe('Transport everyone', () => {
   });
 
 });
+
+describe('In transit a.k.a the pattern buffer', () => {
+  it('when teleporting from the planet to starship', () => {
+    const allPeople = ["Attilus", "Dennix", "Mobius"];
+    const mountedUniverse = mount(<Universe />);
+    const allPeopleOnPlanet = mountedUniverse.find('Planet button');
+
+    allPeopleOnPlanet.at(0).simulate('click');
+
+    expect(mountedUniverse.state('intransitToStarShip')).to.contain('Attilus')
+  });
+
+  it('when teleporting from the starship in planet', () => {
+    const allPeople = ["Lauras", "Tobin", "Robot"];;
+    const mountedUniverse = mount(<Universe />);
+    const allPeopleOnStarship = mountedUniverse.find('Starship button');
+
+    allPeopleOnStarship.at(0).simulate('click');
+
+    expect(mountedUniverse.state('intransitToPlanet')).to.contain('Lauras');
+  });
+});
