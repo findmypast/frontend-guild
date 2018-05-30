@@ -14,6 +14,7 @@ There will be three components defined for you `Universe`, `Planet` and `Starshi
 
 The Planet and Star ship have inhabitants only known to themselves.
 
+- Clicking a transport button for a person should trigger the tranport process
 - When being transported a person should be removed from one inhabitants list to the other. e.g A person from a Planet should be removed and added to the Star ship.
 - The `Planet` and `Starship` should have a `transport` prop for "Lifting state up"
 - The `Planet` and `Starship` might need `componentWillReceiveProps` to update Person passed through
