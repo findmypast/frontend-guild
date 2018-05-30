@@ -53,18 +53,21 @@ describe("Setup Universe, Starship and Planet", () => {
     expect(Planet).to.exist;
   });
 
-  it("Start transporter from Starship", () => {
+  it("Run transporter for Starship", () => {
     let didTransport = false;
     const transport = () => didTransport = true;
     const result = shallow(<Starship transport={transport} />);
+    
     const starshipInstance = result.instance();
-
-    expect(starshipInstance).to.have.property('transport', 'Starship should have a method called "transport"');
+    expect(starshipInstance.transport.name).to.equal('transport', 'Should have transport method on Starship class');
 
     const setTransport = starshipInstance.transport('Lauras');
+    expect(setTransport).to.be.a('function', 'Transport method should call a function.');
 
-    // setTransport = function
-    // call setTransport and check didTransport
+    setTransport();
+
+    expect(result.state('inhabitants')).to.have.length(2).and.not.contain('Lauras', 'Transport should remove "Lauras" from inhabitants state');
+    expect(didTransport).to.equal(true, 'Transport prop was not called');
   });
 });
 
