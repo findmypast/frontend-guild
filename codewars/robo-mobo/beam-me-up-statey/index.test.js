@@ -59,7 +59,7 @@ describe("Setup Universe, Starship and Planet", () => {
     const result = shallow(<Starship transport={transport} />);
     
     const starshipInstance = result.instance();
-    expect(starshipInstance.transport.name).to.equal('transport', 'Should have transport method on Starship class');
+    expect(starshipInstance.transport.name).to.equal('transport', 'Should have transport method on Starship component');
 
     const setTransport = starshipInstance.transport('Lauras');
     expect(setTransport).to.be.a('function', 'Transport method should call a function.');
@@ -68,6 +68,45 @@ describe("Setup Universe, Starship and Planet", () => {
 
     expect(result.state('inhabitants')).to.have.length(2).and.not.contain('Lauras', 'Transport should remove "Lauras" from inhabitants state');
     expect(didTransport).to.equal(true, 'Transport prop was not called');
+  });
+
+  it("Run transporter for planet", () => {
+    let didTransport = false;
+    const transport = () => didTransport = true;
+    const result = shallow(<Planet transport={transport} />);
+    
+    const planetInstance = result.instance();
+    expect(planetInstance.transport.name).to.equal('transport', 'Should have transport method on Planet component');
+
+    const setTransport = planetInstance.transport('Attilus');
+    expect(setTransport).to.be.a('function', 'Transport method should call a function.');
+
+    setTransport();
+
+    expect(result.state('inhabitants')).to.have.length(2).and.not.contain('Attilus', 'Transport should remove "Attilus" from inhabitants state');
+    expect(didTransport).to.equal(true, 'Transport prop was not called');
+  });
+});
+
+describe('In transit a.k.a the pattern buffer', () => {
+  it('when teleporting from the planet to starship', () => {
+    const allPeople = ["Attilus", "Dennix", "Mobius"];
+    const mountedUniverse = mount(<Universe />);
+    const allPeopleOnPlanet = mountedUniverse.find('Planet button');
+
+    allPeopleOnPlanet.at(0).simulate('click');
+
+    expect(mountedUniverse.state()).to.have.property('intransitToStarShip').to.contain('Attilus');
+  });
+
+  it('when teleporting from the starship in planet', () => {
+    const allPeople = ["Lauras", "Tobin", "Robot"];;
+    const mountedUniverse = mount(<Universe />);
+    const allPeopleOnStarship = mountedUniverse.find('Starship button');
+
+    allPeopleOnStarship.at(0).simulate('click');
+
+    expect(mountedUniverse.state()).to.have.property('intransitToPlanet').to.contain('Lauras');
   });
 });
 
@@ -104,26 +143,4 @@ describe('Transport everyone', () => {
     });
   });
 
-});
-
-describe('In transit a.k.a the pattern buffer', () => {
-  it('when teleporting from the planet to starship', () => {
-    const allPeople = ["Attilus", "Dennix", "Mobius"];
-    const mountedUniverse = mount(<Universe />);
-    const allPeopleOnPlanet = mountedUniverse.find('Planet button');
-
-    allPeopleOnPlanet.at(0).simulate('click');
-
-    expect(mountedUniverse.state()).to.have.property('intransitToStarShip').to.contain('Attilus');
-  });
-
-  it('when teleporting from the starship in planet', () => {
-    const allPeople = ["Lauras", "Tobin", "Robot"];;
-    const mountedUniverse = mount(<Universe />);
-    const allPeopleOnStarship = mountedUniverse.find('Starship button');
-
-    allPeopleOnStarship.at(0).simulate('click');
-
-    expect(mountedUniverse.state()).to.have.property('intransitToPlanet').to.contain('Lauras');
-  });
 });
