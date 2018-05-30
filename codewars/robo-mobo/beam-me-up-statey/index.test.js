@@ -52,6 +52,20 @@ describe("Setup Universe, Starship and Planet", () => {
     expect(Starship).to.exist;
     expect(Planet).to.exist;
   });
+
+  it("Start transporter from Starship", () => {
+    let didTransport = false;
+    const transport = () => didTransport = true;
+    const result = shallow(<Starship transport={transport} />);
+    const starshipInstance = result.instance();
+
+    expect(starshipInstance).to.have.property('transport', 'Starship should have a method called "transport"');
+
+    const setTransport = starshipInstance.transport('Lauras');
+
+    // setTransport = function
+    // call setTransport and check didTransport
+  });
 });
 
 describe('Transport everyone', () => {
@@ -97,7 +111,7 @@ describe('In transit a.k.a the pattern buffer', () => {
 
     allPeopleOnPlanet.at(0).simulate('click');
 
-    expect(mountedUniverse.state('intransitToStarShip')).to.contain('Attilus')
+    expect(mountedUniverse.state()).to.have.property('intransitToStarShip').to.contain('Attilus');
   });
 
   it('when teleporting from the starship in planet', () => {
@@ -107,6 +121,6 @@ describe('In transit a.k.a the pattern buffer', () => {
 
     allPeopleOnStarship.at(0).simulate('click');
 
-    expect(mountedUniverse.state('intransitToPlanet')).to.contain('Lauras');
+    expect(mountedUniverse.state()).to.have.property('intransitToPlanet').to.contain('Lauras');
   });
 });
