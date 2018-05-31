@@ -20,3 +20,5 @@ The Planet and Star ship have inhabitants only known to themselves.
 - The `Planet` and `Starship` might need `componentWillReceiveProps` to update Person passed through
 
 Good luck and have fun!
+
+Paired with [Rob Adams](https://www.codewars.com/users/sultanhq)

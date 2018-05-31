@@ -59,6 +59,7 @@ describe("Setup Universe, Starship and Planet", () => {
     const result = shallow(<Starship transport={transport} />);
     
     const starshipInstance = result.instance();
+    expect(starshipInstance.transport).to.be.a('function', 'Should have transport method on Planet component');
     expect(starshipInstance.transport.name).to.equal('transport', 'Should have transport method on Starship component');
 
     const setTransport = starshipInstance.transport('Lauras');
@@ -76,6 +77,7 @@ describe("Setup Universe, Starship and Planet", () => {
     const result = shallow(<Planet transport={transport} />);
     
     const planetInstance = result.instance();
+    expect(planetInstance.transport).to.be.a('function', 'Should have transport method on Planet component');
     expect(planetInstance.transport.name).to.equal('transport', 'Should have transport method on Planet component');
 
     const setTransport = planetInstance.transport('Attilus');
