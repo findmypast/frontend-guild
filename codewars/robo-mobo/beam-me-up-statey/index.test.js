@@ -21,9 +21,7 @@ describe("Setup Universe, Starship and Planet", () => {
   });
 
   it("Starship setup its own inhabitants", () => {
-    const result = shallow(
-      <Starship />
-    );
+    const result = shallow(<Starship />);
     const buttons = result.find("button");
     expect(buttons.length).to.equal(3, "Starship should have 3 inhabitants");
     expect(buttons.at(0).text()).to.equal(
@@ -33,9 +31,7 @@ describe("Setup Universe, Starship and Planet", () => {
   });
 
   it("Planet setup its own inhabitants", () => {
-    const result = shallow(
-      <Planet />
-    );
+    const result = shallow(<Planet />);
     const buttons = result.find("button");
     expect(buttons.length).to.equal(3, "Planet should have 3 inhabitants");
     expect(buttons.at(0).text()).to.equal(
@@ -55,94 +51,119 @@ describe("Setup Universe, Starship and Planet", () => {
 
   it("Run transporter for Starship", () => {
     let didTransport = false;
-    const transport = () => didTransport = true;
+    const transport = () => (didTransport = true);
     const result = shallow(<Starship transport={transport} />);
-    
+    const people = result.find("button");
+
     const starshipInstance = result.instance();
-    expect(starshipInstance.transport).to.be.a('function', 'Should have transport method on Planet component');
-    expect(starshipInstance.transport.name).to.equal('transport', 'Should have transport method on Starship component');
+    expect(starshipInstance.transport).to.be.a(
+      "function",
+      "Should have transport method on Planet component"
+    );
+    expect(starshipInstance.transport.name).to.equal(
+      "transport",
+      "Should have transport method on Starship component"
+    );
 
-    const setTransport = starshipInstance.transport('Lauras');
-    expect(setTransport).to.be.a('function', 'Transport method should call a function.');
+    people.at(0).simulate("click");
 
-    setTransport();
-
-    expect(result.state('inhabitants')).to.have.length(2).and.not.contain('Lauras', 'Transport should remove "Lauras" from inhabitants state');
-    expect(didTransport).to.equal(true, 'Transport prop was not called');
+    expect(result.state("inhabitants"))
+      .to.have.length(2)
+      .and.not.contain(
+        "Lauras",
+        'Transport should remove "Lauras" from inhabitants state'
+      );
+    expect(didTransport).to.equal(true, "Transport prop was not called");
   });
 
   it("Run transporter for planet", () => {
     let didTransport = false;
-    const transport = () => didTransport = true;
+    const transport = () => (didTransport = true);
     const result = shallow(<Planet transport={transport} />);
-    
+    const people = result.find("button");
+
     const planetInstance = result.instance();
-    expect(planetInstance.transport).to.be.a('function', 'Should have transport method on Planet component');
-    expect(planetInstance.transport.name).to.equal('transport', 'Should have transport method on Planet component');
+    expect(planetInstance.transport).to.be.a(
+      "function",
+      "Should have transport method on Planet component"
+    );
+    expect(planetInstance.transport.name).to.equal(
+      "transport",
+      "Should have transport method on Planet component"
+    );
 
-    const setTransport = planetInstance.transport('Attilus');
-    expect(setTransport).to.be.a('function', 'Transport method should call a function.');
+    people.at(0).simulate("click");
 
-    setTransport();
-
-    expect(result.state('inhabitants')).to.have.length(2).and.not.contain('Attilus', 'Transport should remove "Attilus" from inhabitants state');
-    expect(didTransport).to.equal(true, 'Transport prop was not called');
+    expect(result.state("inhabitants"))
+      .to.have.length(2)
+      .and.not.contain(
+        "Attilus",
+        'Transport should remove "Attilus" from inhabitants state'
+      );
+    expect(didTransport).to.equal(true, "Transport prop was not called");
   });
 });
 
-describe('In transit a.k.a the pattern buffer', () => {
-  it('when teleporting from the planet to starship', () => {
+describe("In transit a.k.a the pattern buffer", () => {
+  it("when teleporting from the planet to starship", () => {
     const allPeople = ["Attilus", "Dennix", "Mobius"];
     const mountedUniverse = mount(<Universe />);
-    const allPeopleOnPlanet = mountedUniverse.find('Planet button');
+    const allPeopleOnPlanet = mountedUniverse.find("Planet button");
 
-    allPeopleOnPlanet.at(0).simulate('click');
+    allPeopleOnPlanet.at(0).simulate("click");
 
-    expect(mountedUniverse.state()).to.have.property('intransitToStarShip').to.contain('Attilus');
+    expect(mountedUniverse.state())
+      .to.have.property("intransitToStarShip")
+      .to.contain("Attilus");
   });
 
-  it('when teleporting from the starship in planet', () => {
-    const allPeople = ["Lauras", "Tobin", "Robot"];;
+  it("when teleporting from the starship in planet", () => {
+    const allPeople = ["Lauras", "Tobin", "Robot"];
     const mountedUniverse = mount(<Universe />);
-    const allPeopleOnStarship = mountedUniverse.find('Starship button');
+    const allPeopleOnStarship = mountedUniverse.find("Starship button");
 
-    allPeopleOnStarship.at(0).simulate('click');
+    allPeopleOnStarship.at(0).simulate("click");
 
-    expect(mountedUniverse.state()).to.have.property('intransitToPlanet').to.contain('Lauras');
+    expect(mountedUniverse.state())
+      .to.have.property("intransitToPlanet")
+      .to.contain("Lauras");
   });
 });
 
-describe('Transport everyone', () => {
-  it('from the planet to starship', () => {
+describe("Transport everyone", () => {
+  it("from the planet to starship", () => {
     const allPeople = ["Attilus", "Dennix", "Mobius"];
     const result = mount(<Universe />);
-    const allPeopleOnPlanet = result.find('Planet button');
+    const allPeopleOnPlanet = result.find("Planet button");
 
-    allPeopleOnPlanet.at(0).simulate('click');
-    allPeopleOnPlanet.at(0).simulate('click');
-    allPeopleOnPlanet.at(0).simulate('click');
+    allPeopleOnPlanet.at(0).simulate("click");
+    allPeopleOnPlanet.at(0).simulate("click");
+    allPeopleOnPlanet.at(0).simulate("click");
 
-    const allPeopleOnStarship = result.find('Starship button');
+    const allPeopleOnStarship = result.find("Starship button");
 
     allPeople.forEach((personName, i) => {
-      expect(allPeopleOnStarship.at(i + 3).text()).to.equal('Transport ' + allPeople[i]);
+      expect(allPeopleOnStarship.at(i + 3).text()).to.equal(
+        "Transport " + allPeople[i]
+      );
     });
   });
 
-  it('from the starship to planet', () => {
+  it("from the starship to planet", () => {
     const allPeople = ["Lauras", "Tobin", "Robot"];
     const result = mount(<Universe />);
-    const allPeopleOnStarship = result.find('Starship button');
+    const allPeopleOnStarship = result.find("Starship button");
 
-    allPeopleOnStarship.at(0).simulate('click');
-    allPeopleOnStarship.at(0).simulate('click');
-    allPeopleOnStarship.at(0).simulate('click');
+    allPeopleOnStarship.at(0).simulate("click");
+    allPeopleOnStarship.at(0).simulate("click");
+    allPeopleOnStarship.at(0).simulate("click");
 
-    const allPeopleOnPlanet = result.find('Planet button');
+    const allPeopleOnPlanet = result.find("Planet button");
 
     allPeople.forEach((personName, i) => {
-      expect(allPeopleOnPlanet.at(i + 3).text()).to.equal('Transport ' + allPeople[i]);
+      expect(allPeopleOnPlanet.at(i + 3).text()).to.equal(
+        "Transport " + allPeople[i]
+      );
     });
   });
-
 });
