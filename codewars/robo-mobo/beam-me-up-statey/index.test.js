@@ -137,8 +137,8 @@ describe("Transport everyone", () => {
     const allPeopleOnPlanet = result.find("Planet button");
 
     allPeopleOnPlanet.at(0).simulate("click");
-    allPeopleOnPlanet.at(0).simulate("click");
-    allPeopleOnPlanet.at(0).simulate("click");
+    allPeopleOnPlanet.at(1).simulate("click");
+    allPeopleOnPlanet.at(2).simulate("click");
 
     const allPeopleOnStarship = result.find("Starship button");
 
@@ -155,8 +155,8 @@ describe("Transport everyone", () => {
     const allPeopleOnStarship = result.find("Starship button");
 
     allPeopleOnStarship.at(0).simulate("click");
-    allPeopleOnStarship.at(0).simulate("click");
-    allPeopleOnStarship.at(0).simulate("click");
+    allPeopleOnStarship.at(1).simulate("click");
+    allPeopleOnStarship.at(2).simulate("click");
 
     const allPeopleOnPlanet = result.find("Planet button");
 

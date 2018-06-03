@@ -64,9 +64,9 @@ export class Starship extends React.Component {
     return (
       <div className="Starship">
         <h3>Starship Finderprise</h3>
-        {this.state.inhabitants.map((name, index) => {
+        {this.state.inhabitants.map(name => {
           return (
-            <button key={index} onClick={this.transport(name)}>
+            <button key={name} onClick={this.transport(name)}>
               Transport {name}
             </button>
           );
@@ -103,9 +103,9 @@ export class Planet extends React.Component {
     return (
       <div className="Planet">
         <h3>Planet Earth</h3>
-        {this.state.inhabitants.map((name, index) => {
+        {this.state.inhabitants.map(name => {
           return (
-            <button key={index} onClick={this.transport(name)}>
+            <button key={name} onClick={this.transport(name)}>
               Transport {name}
             </button>
           );
